@@ -182,7 +182,7 @@
     "webdriverio": "4.9.9",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.7.1",
-    "yargs": "^9.0.1"
+    "yargs": "^10.1.1"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
