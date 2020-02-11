@@ -1,18 +1,31 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: '@webex/eslint-config-react',
+  root: true,
+  extends: [
+    'airbnb',
+    'plugin:prettier/recommended',
+    'prettier/react',
+    'plugin:jsdoc/recommended',
+    'plugin:jest/recommended'
+  ],
   env: {
     jest: true,
     browser: true
   },
-  root: true,
   rules: {
-    'operator-linebreak': ['error', 'before', {
-      overrides: {
-        '&&': 'ignore' // Used for conditional render in React components
+    'prettier/prettier': ['error', {}, {
+      usePrettierrc: true,
+      fileInfoOptions: {
+        withNodeModules: true
       }
     }],
-    'require-jsdoc': 'off',
+    'import/no-extraneous-dependencies': 'warn',
+    // 'operator-linebreak': ['error', 'before', {
+    //   overrides: {
+    //     '&&': 'ignore' // Used for conditional render in React components
+    //   }
+    // }],
+    'jsdoc/require-jsdoc': 'off',
     'import/order': ['error', {
       groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
       'newlines-between': 'always-and-inside-groups'
